@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface EventRepo  extends CrudRepository <Event,String> {
 
-    @Query ("Select e from Event where e.timeStamp between :s and :e")
+    @Query ("Select e from Event e where e.timeStamp between :s and :e")
     List<Event> findbyTime(Long s,Long e);
 }
